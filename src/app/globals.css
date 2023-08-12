@@ -18,10 +18,20 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+.header-bg {
+  background: url("/bcd32a9e1d4534f415ffcab8897d8c8f.png") lightgray 0px 0px /
+    100% 100% no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.map-bg {
+  background: url("/c6472c41b4a12ea91fbfdf1b29d21a18.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.25);
 }
