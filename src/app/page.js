@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { DollarIcon, EyeIcon, FlowerIcon, HomeIcon, Shield, StackIcon } from './icons';
+import { BathroomIcon, BedroomIcon, DollarIcon, EyeIcon, FlowerIcon, HomeIcon, Shield, SizeIcon, StackIcon } from './icons';
 
 
 const boxVariant = {
@@ -248,7 +248,7 @@ export default function Home() {
 
               {/*** COST DATA ITEMS ***/}
 
-              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col'>
+              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col flex-grow mb-3 items-center'>
                 <div className='flex justify-center w-max p-1 bg-white rounded-md' style={{ boxShadow: '0px 12px 19px 0px rgba(0, 0, 0, 0.15)' }}>
                   <DollarIcon />
                 </div>
@@ -256,7 +256,7 @@ export default function Home() {
                   as <br /> possible!</span>
               </div>
 
-              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col'>
+              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col mb-3 items-center text-center'>
                 <div className='flex justify-center w-max p-1 bg-white rounded-md' style={{ boxShadow: '0px 12px 19px 0px rgba(0, 0, 0, 0.15)' }}>
                   <HomeIcon />
                 </div>
@@ -264,7 +264,7 @@ export default function Home() {
                   of community!</span>
               </div>
 
-              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col'>
+              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col mb-3 items-center text-center'>
                 <div className='flex justify-center w-max p-1 bg-white rounded-md' style={{ boxShadow: '0px 12px 19px 0px rgba(0, 0, 0, 0.15)' }}>
                   <StackIcon />
                 </div>
@@ -273,7 +273,7 @@ export default function Home() {
               </div>
 
 
-              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col'>
+              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col items-center text-center'>
                 <div className='flex justify-center w-max p-1 bg-white rounded-md' style={{ boxShadow: '0px 12px 19px 0px rgba(0, 0, 0, 0.15)' }}>
                   <FlowerIcon />
                 </div>
@@ -281,7 +281,7 @@ export default function Home() {
                   Environment!</span>
               </div>
 
-              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col'>
+              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col items-center text-center'>
                 <div className='flex justify-center w-max p-1 bg-white rounded-md' style={{ boxShadow: '0px 12px 19px 0px rgba(0, 0, 0, 0.15)' }}>
                   <Shield />
                 </div>
@@ -289,7 +289,7 @@ export default function Home() {
                   Save Money!</span>
               </div>
 
-              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col'>
+              <div className='lg:w-1/3 md:w-1/3 w-1/2 flex flex-col items-center text-center'>
                 <div className='flex justify-center w-max p-1 bg-white rounded-md' style={{ boxShadow: '0px 12px 19px 0px rgba(0, 0, 0, 0.15)' }}>
                   <EyeIcon />
                 </div>
@@ -304,7 +304,7 @@ export default function Home() {
       </div>
 
 
-      <div className='w-full flex flex-col flex-grow bg-gray-200 lg:py-10 md:py-10 p-5 lg:absolute md:absolute properties-top' style={{ alignItems: 'center' }}>
+      <div className='w-full flex flex-col flex-grow bg-gray-200 lg:py-10 md:py-10 p-5 properties-top' style={{ alignItems: 'center' }}>
         <div className='lg:w-3/4 md:w-3/4 w-full flex flex-col'>
           <div className='w-full flex'>
             <div className='w-full flex flex-col'>
@@ -343,6 +343,32 @@ export default function Home() {
                     </div>
                   </div>
 
+                  <div className='w-full border-t -mt-2 flex'>
+                    <div className='flex flex-grow p-3 border-r'>
+                      <div className='flex flex-col justify-center'>
+                        <BedroomIcon />
+                      </div>
+                      <div className='flex flex-col mx-2 justify-center'>
+                        <span className='flex mx-2 text-sm font-semibold'>4</span>
+                      </div>
+                    </div>
+                    <div className='flex flex-grow p-3 border-r'>
+                      <div className='flex flex-col justify-center'>
+                        <BathroomIcon />
+                      </div>
+                      <div className='flex flex-col mx-2 justify-center'>
+                        <span className='flex mx-2 text-sm font-semibold'>2</span>
+                      </div>
+                    </div>
+                    <div className='flex flex-grow p-3 border-r'>
+                      <div className='flex flex-col justify-center'>
+                        <SizeIcon />
+                      </div>
+                      <div className='flex flex-col mx-2 justify-center'>
+                        <span className='flex mx-2 text-sm font-semibold'>2</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
