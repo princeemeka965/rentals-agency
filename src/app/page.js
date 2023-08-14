@@ -348,7 +348,7 @@ export default function Home() {
             ))}
 
             <div className='flex w-full my-7 justify-center'>
-              <div className={`w-max p-3 flex ${paginationItem === 1 ? 'bg-disabled' : 'bg-white cursor-pointer text-flame'}`}
+              <div className={`w-max p-3 flex flex-col justify-center ${paginationItem === 1 ? 'bg-disabled' : 'bg-white cursor-pointer text-flame'}`}
                 onClick={() => decreasePagination(paginationItem)}>
                 <span className='text-sm font-black'>Prev</span>
               </div>
@@ -361,7 +361,7 @@ export default function Home() {
               <div className={`w-max py-3 px-3 border ${paginationItem === 3 ? 'bg-flame text-white' : 'bg-white text-flame'}`}>
                 <span className='text-sm font-black'>3</span>
               </div>
-              <div className={`w-max p-3 flex ${paginationItem === 3 ? 'bg-disabled' : 'bg-white cursor-pointer text-flame'}`}
+              <div className={`w-max p-3 flex flex-col justify-center ${paginationItem === 3 ? 'bg-disabled' : 'bg-white cursor-pointer text-flame'}`}
                 onClick={() => increasePagination(paginationItem)}>
                 <span className='text-sm font-black'>Next</span>
               </div>
