@@ -141,3 +141,108 @@ select:focus {
     transform: translateX(100%);
   }
 }
+
+@media screen and (max-width: 767px) {
+  .body-top {
+    top: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .body-top {
+    top: 70%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .body-top {
+    top: 90%;
+  }
+}
+
+.image-bg {
+  background: url("/30426403a54de305110513d6cc2c537f.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.properties-top {
+  top: 170%;
+}
+
+.bg-card {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-flipped {
+  animation: flipCard 1s forwards !important;
+}
+
+.non-card-flipped {
+  animation: reverseFlipCard 1s forwards !important;
+}
+
+.rotate-card {
+  animation: rotateCard 1s forwards !important;
+}
+
+.non-rotate-card {
+  animation: nonRotateCard 1s forwards !important;
+}
+
+@keyframes rotateCard {
+  from {
+    transform: rotateY(0);
+    display: none;
+  }
+  to {
+    transform: rotateY(180deg);
+    display: flex;
+  }
+}
+
+@keyframes nonRotateCard {
+  from {
+    transform: rotateY(180deg);
+    display: flex;
+  }
+  to {
+    transform: rotateY(0);
+    display: none;
+  }
+}
+
+@keyframes flipCard {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes reverseFlipCard {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0);
+  }
+}
+
+.text-flame {
+  color: #f4511e;
+}
+
+.bg-flame {
+  background-color: #f4511e;
+}
+
+.bg-disabled {
+  background-color: #f3f3f3;
+  cursor: not-allowed;
+  color: #bdbdbd;
+}
