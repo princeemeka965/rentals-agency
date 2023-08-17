@@ -304,7 +304,7 @@ export default function Home() {
       </div>
 
 
-      <div className='w-full flex flex-col flex-grow bg-gray-200 lg:py-10 md:py-10 p-5 properties-top' style={{ alignItems: 'center' }}>
+      <div className='w-full flex flex-col flex-grow bg-gray-200 lg:py-10 md:py-10 p-5 lg:absolute md:absolute properties-top' style={{ alignItems: 'center' }}>
         <div className='lg:w-3/4 md:w-3/4 w-full flex flex-col'>
           <div className='w-full flex'>
             <div className='w-full flex flex-col'>
@@ -318,7 +318,7 @@ export default function Home() {
           <div className='my-5 flex flex-row w-full flex-wrap'>
 
             {housingItems.map((item, index) => (
-              <motion.div className={`flex flex-grow mr-10 my-3 bg-white rounded-lg ${cardFlipped ? 'card-flipped' : 'non-card-flipped'}`}
+              <motion.div className={`lg:flex md:flex hidden flex-grow mr-10 my-3 bg-white rounded-lg ${cardFlipped ? 'card-flipped' : 'non-card-flipped'}`}
                 style={{ boxShadow: '0px 34px 36px 0px rgba(0, 0, 0, 0.13)' }} key={index}
                 ref={listRef}
                 variants={boxVariant}
@@ -373,6 +373,64 @@ export default function Home() {
               </motion.div>
             ))}
 
+
+
+
+            {/*** FOR MOBILE SCREENS ***/}
+
+            {housingItems.map((item, index) => (
+              <div className={`lg:hidden md:hidden flex flex-grow mr-14 -ml-1 my-3 bg-white rounded-lg ${cardFlipped ? 'card-flipped' : 'non-card-flipped'}`}
+                style={{ boxShadow: '0px 34px 36px 0px rgba(0, 0, 0, 0.13)' }} key={`${index}-1`}
+              >
+                <div className={`flex flex-col ${cardFlipped ? 'rotate-card' : 'non-rotate-card'}`} style={{ width: '329.7px' }}>
+                  <Image
+                    src={item.image}
+                    alt="Items-logo"
+                    className="dark:invert rounded-t-lg"
+                    width={329.7}
+                    height={283}
+                    priority
+                  />
+
+                  <div className='my-4 w-full px-7 flex flex-col'>
+                    <span className='font-black text-sm capitalize'>2578 Folsom street, san francisco, CA, 94110</span>
+                    <div className='my-4 flex flex-col'>
+                      <span className='text-xs' style={{ color: '#818181' }}>Private Room</span>
+                      <span className='text-base font-semibold' style={{ color: '#F4511E' }}>$1200/month</span>
+                    </div>
+                  </div>
+
+                  <div className='w-full border-t -mt-2 flex'>
+                    <div className='flex flex-grow p-3 border-r justify-center'>
+                      <div className='flex flex-col justify-center'>
+                        <BedroomIcon />
+                      </div>
+                      <div className='flex flex-col mx-2 justify-center'>
+                        <span className='flex mx-2 text-sm font-semibold'>4</span>
+                      </div>
+                    </div>
+                    <div className='flex flex-grow p-3 border-r justify-center'>
+                      <div className='flex flex-col justify-center'>
+                        <BathroomIcon />
+                      </div>
+                      <div className='flex flex-col mx-2 justify-center'>
+                        <span className='flex mx-2 text-sm font-semibold'>2</span>
+                      </div>
+                    </div>
+                    <div className='flex flex-grow p-3 border-r justify-center'>
+                      <div className='flex flex-col justify-center'>
+                        <SizeIcon />
+                      </div>
+                      <div className='flex flex-col mx-2 justify-center'>
+                        <span className='flex mx-2 text-sm font-semibold'>2</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+
             <div className='flex w-full my-7 justify-center'>
               <div className={`w-max p-3 flex flex-col justify-center ${paginationItem === 1 ? 'bg-disabled' : 'bg-white cursor-pointer text-flame'}`}
                 onClick={() => decreasePagination(paginationItem)}>
@@ -393,6 +451,75 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div className='w-full flex flex-col flex-grow bg-white lg:py-10 md:py-10 p-5 lg:absolute md:absolute more-data' style={{ alignItems: 'center' }}>
+        <div className='lg:w-3/4 md:w-3/4 w-full flex flex-col'>
+          <div className='w-full flex lg:py-5 md:py-5'>
+            <div className='w-max flex flex-col'>
+              <Image
+                src="/9f6505153b32bd3b444979b691a4ed6f.jpg"
+                alt="Flexible Leases"
+                className="dark:invert lg:flex md:flex hidden"
+                width={250}
+                height={334}
+                style={{ borderRadius: '20px' }}
+                priority
+              />
+              <Image
+                src="/7eb95e09f92ebab98ed925ba5026cc52.jpg"
+                alt="Monthly House Cleaning"
+                className="dark:invert my-2 lg:flex md:flex hidden"
+                width={212}
+                height={285}
+                style={{ borderRadius: '20px' }}
+                priority
+              />
+            </div>
+            <div className='w-max flex flex-col'>
+              <Image
+                src="/c42022124af09f248749ab4364b1e61f.jpg"
+                alt="Flexible Leases"
+                className="dark:invert mx-2 lg:flex md:flex hidden"
+                width={250}
+                height={334}
+                style={{ borderRadius: '20px' }}
+                priority
+              />
+              <Image
+                src="/9aa4a08d0267c89e61eef63089339b0f.jpg"
+                alt="Monthly House Cleaning"
+                className="dark:invert my-2 mx-3 lg:flex md:flex hidden"
+                width={338}
+                height={356}
+                style={{ borderRadius: '20px' }}
+                priority
+              />
+            </div>
+            <div className='w-max flex flex-col'>
+              <div
+                className="flex w-full justify-center"
+                style={{ margin: 0, alignItems: 'center', minHeight: '70vh', position: 'relative' }}
+              >
+                <div className="w-3/4 flex flex-col justify-center">
+                  <span className='lg:text-4xl md:text-3xl text-xl font-black'>Flexibility and options to suit your lifestyle.</span>
+                  <span className='text-lg my-4'>You need it? We got it.
+                    We make finding your next home easy, comfortable, and simple.
+                    From our happiness guarantee to our selective roommate finder option.
+                    We provide you the flexibility that you most desire.</span>
+                  <div className='flex my-4 w-max py-3 px-5 cursor-pointer bg-flame rounded-md justify-center'>
+                    <span className='text-base text-white'>
+                      Search Rooms
+                      </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>

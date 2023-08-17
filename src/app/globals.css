@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +13,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: Roboto;
 }
 
 .header-bg {
@@ -82,7 +85,7 @@ select:focus {
   flex-direction: column;
   right: 0;
   height: 100%;
-  width: 100%;
+  width: 70%;
   background: #ffffff;
   color: #321c3b;
   box-shadow: 0px 10px 15px rgba(8, 7, 8, 0.1),
@@ -133,18 +136,6 @@ select:focus {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .body-top {
-    top: 50%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .body-top {
-    top: 70%;
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .body-top {
     top: 90%;
@@ -158,8 +149,16 @@ select:focus {
   background-repeat: no-repeat;
 }
 
-.properties-top {
-  top: 170%;
+@media screen and (min-width: 1200px) {
+  .properties-top {
+    top: 170%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .more-data {
+    top: 310%;
+  }
 }
 
 .bg-card {
