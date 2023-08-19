@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { BathroomIcon, BedroomIcon, DollarIcon, EyeIcon, FlowerIcon, HomeIcon, QuoteIcon, Shield, SizeIcon, StackIcon } from './icons';
+import { BathroomIcon, BedroomIcon, DollarIcon, EyeIcon, Facebook, FaxIcon, FlowerIcon, GooglePlus, HomeIcon, Instagram, Linkedin, MapIcon, PhoneIcon, QuoteIcon, Shield, SizeIcon, StackIcon, Twitter, Youtube } from './icons';
 import InputField from './components/InputField';
 import { Carousel } from '@material-tailwind/react';
 
@@ -670,20 +670,84 @@ export default function Home() {
 
           <div className='w-full flex flex-col lg:my-10 md:my-10 my-5'>
             <div className='w-full border border-3' style={{ borderColor: '#F4511E' }} />
-            <div className='w-full p-3 my-9 flex'>
-              <div className='flex flex-grow'>
+            <div className='w-full lg:p-3 md:p-3 my-9 flex'>
+              <div className='lg:flex md:flex hidden w-1/2' style={{ height: '118px' }}>
                 <Image
                   src="/logo.png"
                   alt="Home Logo"
-                  className="dark:invert"
+                  className="dark:invert mt-10"
                   width={200}
                   height={124}
                   priority
                 />
               </div>
-              <div className='flex flex-grow'>
+              <div className='flex flex-grow flex-col lg:items-end md:items-end'>
+                <div className='flex flex-row pt-10'>
+                  <MapIcon />
+                  <p className='text-sm flex mx-3 my-1'>
+                    345 Faulconer Drive, Suite 4 • Charlottesville, CA, 12345
+                  </p>
+                </div>
+                <div className='flex flex-row w-full lg:justify-end md:justify-end my-4'>
+                  <div className='flex w-1/2 items-center lg:pl-3 md:pl-3'>
+                    <PhoneIcon />
+                    <p className='text-sm flex mx-3 my-1'>
+                      (123) 456-7890
+                    </p>
+                  </div>
+                  <div className='flex'>
+                    <FaxIcon />
+                    <p className='text-sm flex mx-3 my-1'>
+                      (123) 456-7890
+                    </p>
+                  </div>
+                </div>
+                <div className='flex flex-row justify-start lg:-ml-3 md:-ml-3 my-4'>
+                  <p className='text-sm lg:flex md:flex hidden mr-3 my-1'>
+                    Social Media
+                  </p>
+                  <Facebook className='lg:mx-3 md:mx-3 ml-1 mr-3' />
+                  <Twitter className='mx-3' />
+                  <Linkedin className='mx-3' />
+                  <Youtube className='mx-3' />
+                  <Instagram className='mx-3' />
+                  <GooglePlus className='ml-3 mr-8' />
+                </div>
               </div>
             </div>
+
+            <div className='w-full flex justify-center my-3'>
+              <Image
+                src="/github.png"
+                alt="Avatar"
+                className="dark:invert my-2 rounded-full lg:flex md:flex hidden"
+                width={61}
+                height={61}
+                priority
+              />
+              <Image
+                src="/github.png"
+                alt="Avatar"
+                className="dark:invert my-2 rounded-full lg:hidden md:hidden flex"
+                width={38}
+                height={31}
+                priority
+              />
+              <div className='flex flex-col justify-center mx-4'>
+                <p className='text-base font-black underline my-1'>
+                  <a href="https://github.com/princeemeka965/rentals-agency" target="_blank">@princeemeka965/rentals-agency</a></p>
+              </div>
+            </div>
+
+            <div className='w-full lg:flex md:flex hidden justify-center my-5'>
+              Copyright © {new Date().getFullYear()}
+              <a href="https://github.com/princeemeka965" className='mx-1 underline font-bold' target="_blank">@princeemeka965</a>. All rights reserved
+            </div>
+
+            <div className='w-full lg:hidden md:hidden flex justify-center my-5'>
+              Copyright © {new Date().getFullYear()} <a href="https://github.com/princeemeka965" className='mx-1 underline font-bold' target="_blank">@princeemeka965</a>
+            </div>
+
           </div>
 
 
