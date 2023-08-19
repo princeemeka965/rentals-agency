@@ -340,7 +340,7 @@ export default function Home() {
                     priority
                   />
 
-                  <div className='my-4 w-full px-7 flex flex-col'>
+                  <div className='my-4 w-full px-3 flex flex-col'>
                     <span className='font-black text-sm capitalize'>2578 Folsom street, san francisco, CA, 94110</span>
                     <div className='my-4 flex flex-col'>
                       <span className='text-xs' style={{ color: '#818181' }}>Private Room</span>
@@ -349,7 +349,7 @@ export default function Home() {
                   </div>
 
                   <div className='w-full border-t -mt-2 flex'>
-                    <div className='flex flex-grow p-3 border-r'>
+                    <div className='flex flex-grow p-3 border-r justify-center'>
                       <div className='flex flex-col justify-center'>
                         <BedroomIcon />
                       </div>
@@ -357,7 +357,7 @@ export default function Home() {
                         <span className='flex mx-2 text-sm font-semibold'>4</span>
                       </div>
                     </div>
-                    <div className='flex flex-grow p-3 border-r'>
+                    <div className='flex flex-grow p-3 border-r justify-center'>
                       <div className='flex flex-col justify-center'>
                         <BathroomIcon />
                       </div>
@@ -365,7 +365,7 @@ export default function Home() {
                         <span className='flex mx-2 text-sm font-semibold'>2</span>
                       </div>
                     </div>
-                    <div className='flex flex-grow p-3 border-r'>
+                    <div className='flex flex-grow p-3 border-r justify-center'>
                       <div className='flex flex-col justify-center'>
                         <SizeIcon />
                       </div>
@@ -397,7 +397,7 @@ export default function Home() {
                     priority
                   />
 
-                  <div className='my-4 w-full px-7 flex flex-col'>
+                  <div className='my-4 w-full px-3 flex flex-col'>
                     <span className='font-black text-sm capitalize'>2578 Folsom street, san francisco, CA, 94110</span>
                     <div className='my-4 flex flex-col'>
                       <span className='text-xs' style={{ color: '#818181' }}>Private Room</span>
@@ -689,7 +689,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className='flex flex-row w-full lg:justify-end md:justify-end my-4'>
-                  <div className='flex w-1/2 items-center lg:pl-3 md:pl-3'>
+                  <div className='flex w-1/2 items-center lg:pl-2 md:pl-2'>
                     <PhoneIcon />
                     <p className='text-sm flex mx-3 my-1'>
                       (123) 456-7890
@@ -702,7 +702,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className='flex flex-row justify-start lg:-ml-3 md:-ml-3 my-4'>
+                <div className='flex flex-row justify-start lg:-ml-2 md:-ml-2 my-4'>
                   <p className='text-sm lg:flex md:flex hidden mr-3 my-1'>
                     Social Media
                   </p>
@@ -734,17 +734,17 @@ export default function Home() {
                 priority
               />
               <div className='flex flex-col justify-center mx-4'>
-                <p className='text-base font-black underline my-1'>
+                <p className='text-sm font-black underline my-1'>
                   <a href="https://github.com/princeemeka965/rentals-agency" target="_blank">@princeemeka965/rentals-agency</a></p>
               </div>
             </div>
 
-            <div className='w-full lg:flex md:flex hidden justify-center my-5'>
+            <div className='w-full lg:flex md:flex hidden justify-center mt-5'>
               Copyright © {new Date().getFullYear()}
               <a href="https://github.com/princeemeka965" className='mx-1 underline font-bold' target="_blank">@princeemeka965</a>. All rights reserved
             </div>
 
-            <div className='w-full lg:hidden md:hidden flex justify-center my-5'>
+            <div className='w-full lg:hidden md:hidden flex justify-center mt-5 text-sm'>
               Copyright © {new Date().getFullYear()} <a href="https://github.com/princeemeka965" className='mx-1 underline font-bold' target="_blank">@princeemeka965</a>
             </div>
 
