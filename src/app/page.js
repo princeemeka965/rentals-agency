@@ -5,7 +5,9 @@ import { useState } from 'react'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { BathroomIcon, BedroomIcon, DollarIcon, EyeIcon, FlowerIcon, HomeIcon, Shield, SizeIcon, StackIcon } from './icons';
+import { BathroomIcon, BedroomIcon, DollarIcon, EyeIcon, FlowerIcon, HomeIcon, QuoteIcon, Shield, SizeIcon, StackIcon } from './icons';
+import InputField from './components/InputField';
+import { Carousel } from '@material-tailwind/react';
 
 
 const boxVariant = {
@@ -19,6 +21,8 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [cardFlipped, setCardFlipped] = useState(false);
   const [paginationItem, setItem] = useState(1);
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(6);
 
   const control = useAnimation();
   const controlList = useAnimation();
@@ -84,9 +88,10 @@ export default function Home() {
     if (number > 1) {
       const decrementNumber = number - 1;
       setItem(decrementNumber);
-      setCardFlipped(!cardFlipped)
+      setCardFlipped(!cardFlipped);
     }
   }
+
 
   return (
     <div className='w-full flex flex-col h-full'>
@@ -317,7 +322,7 @@ export default function Home() {
 
           <div className='my-5 flex flex-row w-full flex-wrap'>
 
-            {housingItems.map((item, index) => (
+            {housingItems.slice(start, end).map((item, index) => (
               <motion.div className={`lg:flex md:flex hidden flex-grow mr-10 my-3 bg-white rounded-lg ${cardFlipped ? 'card-flipped' : 'non-card-flipped'}`}
                 style={{ boxShadow: '0px 34px 36px 0px rgba(0, 0, 0, 0.13)' }} key={index}
                 ref={listRef}
@@ -506,7 +511,7 @@ export default function Home() {
                 className="flex w-full justify-center"
                 style={{ margin: 0, alignItems: 'center', minHeight: '70vh', position: 'relative' }}
               >
-                <div className="w-3/4 flex flex-col justify-center">
+                <div className="w-3/4 flex flex-col justify-center items-center">
                   <span className='lg:text-4xl md:text-3xl text-xl font-black'>Flexibility and options to suit your lifestyle.</span>
                   <span className='text-lg my-4'>You need it? We got it.
                     We make finding your next home easy, comfortable, and simple.
@@ -515,12 +520,172 @@ export default function Home() {
                   <div className='flex my-4 w-max py-3 px-5 cursor-pointer bg-flame rounded-md justify-center'>
                     <span className='text-base text-white'>
                       Search Rooms
-                      </span>
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div className="w-full flex flex-col">
+            <p className='lg:text-xl md:text-xl text-base mt-5 font-black text-center mb-3'>
+              Your property with us and be Confident that Your Room will be Filled Out!
+            </p>
+            <div className='w-full flex flex-col my-3 p-6 rounded-md' style={{ boxShadow: '0px 4px 63px 0px rgba(0, 0, 0, 0.15)' }}>
+              <p className='lg:text-xl md:text-xl text-base font-black text-flame mb-5 text-center'>Add A New Property</p>
+              <div className='w-full flex my-3 flex-col justify-center'>
+                <div className='w-full flex lg:flex-row md:flex-row flex-col'>
+                  <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" placeholder="Enter Name" label="Name" />
+                  <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" class="lg:flex md:flex hidden" placeholder="Enter Address" label="Address" />
+                  <div className='my-3 lg:hidden md:hidden'>
+                    <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" placeholder="Enter Address" label="Address" />
+                  </div>
+                  <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" placeholder="Enter Unit" label="Unit Number" />
+                </div>
+                <div className='w-full flex lg:flex-row md:flex-row flex-col lg:my-4 md:my-4'>
+                  <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" class="lg:flex md:flex hidden" placeholder="Enter City" label="City" />
+                  <div className='my-3 lg:hidden md:hidden'>
+                    <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" placeholder="Enter City" label="City" />
+                  </div>
+                  <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" placeholder="Enter State" label="State" />
+                  <div className='my-3 lg:hidden md:hidden'>
+                    <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" placeholder="Enter Room Type" label="Room Type" />
+                  </div>
+                  <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" class="lg:flex md:flex hidden" placeholder="Enter Room Type" label="Room Type" />
+                </div>
+                <div className='lg:w-1/3 md:w-1/3 w-full flex flex-row'>
+                  <InputField inputClass="flex flex-grow p-3 rounded-md mx-4 bg-gray-200" placeholder="Enter Price" label="Price" />
+                </div>
+                <div className='w-full flex flex-row mt-10 justify-center'>
+                  <div className='flex lg:w-1/3 md:w-1/3 w-full py-3 px-5 cursor-pointer bg-flame rounded-md justify-center'>
+                    <span className='text-base text-white'>
+                      Add New Property
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='w-full flex lg:my-10 md:my-10 my-5 rounded-md' style={{
+            backgroundColor: 'rgba(244, 81, 30, 0.07)'
+          }}>
+            <Carousel className="rounded-xl" autoplay loop>
+              <div className='w-full p-5 flex flex-col h-full'>
+                <QuoteIcon className="ml-20" />
+                <div className='w-full flex flex-row items-center justify-center'>
+                  <div className='lg:w-1/2 md:w-1/2 w-full flex flex-col my-4'>
+                    <p className='text-lg'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Etiam interdum nisl et nunc facilisis, a commodo eros mollis.
+                      Nunc vel pellentesque est. Curabitur at odio sit amet libero vulputate efficitur ac nec justo.
+                      Nulla vitae mauris quam. Nulla quam massa, faucibus id pretium ac, mattis eu velit. Donec sed risus a lacus fringilla finibus.
+                    </p>
+                    <div className='my-4 flex w-full justify-center rounded-full'>
+                      <Image
+                        src="/avatar.jpg"
+                        alt="Avatar"
+                        className="dark:invert my-2 rounded-full"
+                        width={61}
+                        height={61}
+                        priority
+                      />
+                      <div className="flex flex-col mx-3">
+                        <p className='text-sm font-black mt-4' style={{ color: '#F4511E' }}>
+                          Harry Wilson
+                        </p>
+                        <p className='text-sm'>
+                          Property Owner
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='w-full p-5 flex flex-col h-full'>
+                <QuoteIcon className="ml-20" />
+                <div className='w-full flex flex-row items-center justify-center'>
+                  <div className='lg:w-1/2 md:w-1/2 w-full flex flex-col my-4'>
+                    <p className='text-lg'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Etiam interdum nisl et nunc facilisis, a commodo eros mollis.
+                      Nunc vel pellentesque est. Curabitur at odio sit amet libero vulputate efficitur ac nec justo.
+                      Nulla vitae mauris quam. Nulla quam massa, faucibus id pretium ac, mattis eu velit. Donec sed risus a lacus fringilla finibus.
+                    </p>
+                    <div className='my-4 flex w-full justify-center rounded-full'>
+                      <Image
+                        src="/avatar.jpg"
+                        alt="Avatar"
+                        className="dark:invert my-2 rounded-full"
+                        width={61}
+                        height={61}
+                        priority
+                      />
+                      <div className="flex flex-col mx-3">
+                        <p className='text-sm font-black mt-4' style={{ color: '#F4511E' }}>
+                          Harry Wilson
+                        </p>
+                        <p className='text-sm'>
+                          Property Owner
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='w-full p-5 flex flex-col h-full'>
+                <QuoteIcon className="ml-20" />
+                <div className='w-full flex flex-row items-center justify-center'>
+                  <div className='lg:w-1/2 md:w-1/2 w-full justify-center flex flex-col my-4'>
+                    <p className='text-lg'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Etiam interdum nisl et nunc facilisis, a commodo eros mollis.
+                      Nunc vel pellentesque est. Curabitur at odio sit amet libero vulputate efficitur ac nec justo.
+                      Nulla vitae mauris quam. Nulla quam massa, faucibus id pretium ac, mattis eu velit. Donec sed risus a lacus fringilla finibus.
+                    </p>
+                    <div className='my-4 flex w-full justify-center rounded-full'>
+                      <Image
+                        src="/avatar.jpg"
+                        alt="Avatar"
+                        className="dark:invert my-2 rounded-full"
+                        width={61}
+                        height={61}
+                        priority
+                      />
+                      <div className="flex flex-col mx-3">
+                        <p className='text-sm font-black mt-4' style={{ color: '#F4511E' }}>
+                          Harry Wilson
+                        </p>
+                        <p className='text-sm'>
+                          Property Owner
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Carousel>
+          </div>
+
+
+          <div className='w-full flex flex-col lg:my-10 md:my-10 my-5'>
+            <div className='w-full border border-3' style={{ borderColor: '#F4511E' }} />
+            <div className='w-full p-3 my-9 flex'>
+              <div className='flex flex-grow'>
+                <Image
+                  src="/logo.png"
+                  alt="Home Logo"
+                  className="dark:invert"
+                  width={200}
+                  height={124}
+                  priority
+                />
+              </div>
+              <div className='flex flex-grow'>
+              </div>
+            </div>
+          </div>
+
 
         </div>
       </div>

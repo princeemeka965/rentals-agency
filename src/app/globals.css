@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 @tailwind base;
 @tailwind components;
@@ -13,7 +13,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  font-family: Roboto;
+  font-family: Poppins;
 }
 
 .header-bg {
@@ -235,4 +235,13 @@ select:focus {
   background-color: #f3f3f3;
   cursor: not-allowed;
   color: #bdbdbd;
+}
+
+input {
+  background-color: inherit !important;
+  outline: none;
+}
+
+input:active {
+  outline: none;
 }
